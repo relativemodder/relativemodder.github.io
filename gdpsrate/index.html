@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <style>
+            input.but{
+                width: 180px;
+                height: 50px;
+                background-image: url('assets/btn-submit.png');
+                background-color: rgba(0, 0, 0, 0);
+                background-repeat: none;
+                border: none;
+                background-size:cover;
+            }
+            input.tex{
+                width: 180px;
+                height: 50px;
+                background-color:rgb(39, 39, 39);
+                border: none;
+                border-radius: 10px;
+                background-size: cover;
+                font-family: pusabregular;
+                color: white;
+            }
+            body{
+                background-image: url('assets/background.jpg');
+                background-size: cover;
+            }
+            form{
+                background-image: url('assets/brownbox.png');
+                padding-left: 60px;
+                padding-top: 40px;
+                top: 40%;
+                position: relative;
+                margin-left: 40%;
+                width: 260px;
+                height: 280px;
+            }
+            @font-face {
+    font-family: 'pusabregular';
+    src: url('PUSAB___-webfont.eot');
+    src: url('PUSAB___-webfont.eot?#iefix') format('embedded-opentype'),
+         url('PUSAB___-webfont.woff2') format('woff2'),
+         url('PUSAB___-webfont.woff') format('woff'),
+         url('PUSAB___-webfont.ttf') format('truetype'),
+         url('PUSAB___-webfont.svg#pusabregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+        </style>
+    </head>
+    <body>
+        <form action="http://servers.gdhost.pe.hu/HxTYn/suggestGJStars20.php" method="POST" target="yup">
+            <input class="tex" type="hidden" name="gjp" value="AQEFBAYHAwUEBgUF" />
+            <input class="tex" type="hidden" name="accountID" value="81968" />
+            <input class="tex" type="text" name="levelID" placeholder="Level ID" /><br><br>
+            <input class="tex" type="text" name="stars" placeholder="Stars" /><br><br>
+            <input class="tex" type="text" name="feature" placeholder="Is featured? (0 or 1)" /><br>
+            <br>
+            <input type="submit" class="but" value="" />
+        </form>
+        <iframe name="yup" width="400" height="400" style="display: block;"></iframe>
+    </body>
+</html>
