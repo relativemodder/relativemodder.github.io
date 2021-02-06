@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width" />
         <title>My Telegram</title>
         <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="load.css" />
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script type="text/javascript">
               var server = "http://kvantoriumchat.7m.pl/api/";
@@ -88,6 +89,24 @@ $(function() {
             <div class="dialog"><img src="avatar.png" hspace="0" width="50" vspace="9" align="center" /><span class="matename">Name</span></div>
         </div>
         <div class="messages"><div id="response">Waiting</div><div class="notselected">Select a chat to start messaging</div></div>
-        <div class="loginform"></div>
+        <div class="loginform"><div class="cssload-dots">
+            <div class="cssload-dots">
+                <div class="cssload-dot"></div>
+                <div class="cssload-dot"></div>
+                <div class="cssload-dot"></div>
+                <div class="cssload-dot"></div>
+                <div class="cssload-dot"></div>
+            </div>
+            
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="goo">
+                        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="12" ></feGaussianBlur>
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0	0 1 0 0 0	0 0 1 0 0	0 0 0 18 -7" result="goo" ></feColorMatrix>
+                        <!--<feBlend in2="goo" in="SourceGraphic" result="mix" ></feBlend>-->
+                    </filter>
+                </defs>
+            </svg>
+        </div>
     </body>
 </html>
