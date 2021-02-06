@@ -7,8 +7,12 @@ body{
     height: 60%;
     left: 30%;
     top: 20%;
+    border-radius: 5px;
     background-color: #353535;
     z-index: 30;
+    -webkit-box-shadow: 0px 0px 48px -5px rgba(0,115,255,1);
+    -moz-box-shadow: 0px 0px 48px -5px rgba(0,115,255,1);
+    box-shadow: 0px 0px 48px -5px rgba(0,115,255,1);
 }
 h1{
     font-family: Corbel;
