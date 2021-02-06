@@ -67,7 +67,7 @@ document.cookie = updatedCookie
 }
 
 function checkLoggedIn(){
-    if(typeof getCookie("user_id") == undefined){
+    if(typeof getCookie("user_id") !== undefined){
         alert("Не вошел!");
         setCookie("user_id", 1);
     }
