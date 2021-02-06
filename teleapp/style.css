@@ -5,6 +5,8 @@ body{
     position: fixed;
     width: 40%;
     height: 60%;
+    left: 30%;
+    top: 20%;
     background-color: #353535;
     z-index: 30;
 }
