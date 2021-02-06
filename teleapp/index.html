@@ -26,11 +26,11 @@ function Login(username, password)
 }
 
 function getCookie(name) {
-  var matches = document.cookie.match(new RegExp(
-    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-  ));
-  return matches ? decodeURIComponent(matches[1]) : undefined;
-}
+        var matches = document.cookie.match(new RegExp(
+            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+            ));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+    }
 function setCookie(name, value, props) {
 
 props = props || {}
@@ -67,7 +67,11 @@ document.cookie = updatedCookie
 }
 
 function checkLoggedIn(){
-    
+    if ( (getCookie("user_id") === undefined) )
+    {     
+
+        //document.cookie = "user_id=" + escape(document.referrer) +"; expires=" + expire.toUTCString() +";";
+    }
 }
 
 // initialize jQuery
@@ -79,6 +83,7 @@ $(function() {
     </head>
     <body>
         <center><h1>Kvantorium chat</h1></center>
+        <div class="loginform"></div>
         <div class="dialogs">
             <h2 class="chatsText">Dialogs</h2>
             <div class="dialog"><img src="avatar.png" hspace="0" width="50" vspace="9" align="center" /><span class="matename">Name</span></div>

@@ -1,6 +1,13 @@
 body{
     background-color: rgb(27, 27, 27);
 }
+.loginform {
+    position: fixed;
+    width: 40%;
+    height: 60%;
+    background-color: #353535;
+    
+}
 h1{
     font-family: Corbel;
     color: whitesmoke;
