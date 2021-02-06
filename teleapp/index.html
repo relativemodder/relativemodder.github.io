@@ -80,6 +80,7 @@ $(function() {
     checkLoggedIn();
 });
         </script>
+<script type="text/javascript" src="formimplementer.js"></script>
 
     </head>
     <body>
@@ -89,8 +90,8 @@ $(function() {
             <div class="dialog"><img src="avatar.png" hspace="0" width="50" vspace="9" align="center" /><span class="matename">Name</span></div>
         </div>
         <div class="messages"><div id="response">Waiting</div><div class="notselected">Select a chat to start messaging</div></div>
-        <div class="loginform"><div class="cssload-dots">
-            <div class="cssload-dots">
+        <div class="loginform">
+            <!--<div class="cssload-dots">
                 <div class="cssload-dot"></div>
                 <div class="cssload-dot"></div>
                 <div class="cssload-dot"></div>
@@ -103,10 +104,16 @@ $(function() {
                     <filter id="goo">
                         <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="12" ></feGaussianBlur>
                         <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0	0 1 0 0 0	0 0 1 0 0	0 0 0 18 -7" result="goo" ></feColorMatrix>
-                        <!--<feBlend in2="goo" in="SourceGraphic" result="mix" ></feBlend>-->
+                        //<feBlend in2="goo" in="SourceGraphic" result="mix" ></feBlend>
                     </filter>
                 </defs>
-            </svg>
+            </svg>-->
+            <form id="loginform">
+                <input type="text" name="login" placeholder="user name" />
+                <input type="password" name="password" placeholder="Password" />
+                <input type="submit" id="sub" />
+            </form>
+            
         </div>
     </body>
 </html>
