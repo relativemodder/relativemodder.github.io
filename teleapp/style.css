@@ -1,6 +1,21 @@
 body{
     background-color: rgb(27, 27, 27);
 }
+input{
+    width: 80%;
+    height: 50px;
+    font-size: 14pt;
+    left: 10%;
+    margin-top: 40px;
+    border-radius: 14px;
+    position: relative;
+}
+form{
+    font-size: 14pt;
+    left: 0%;
+    top: 20%;
+    position: relative;
+}
 .loginform {
     position: fixed;
     width: 40%;
