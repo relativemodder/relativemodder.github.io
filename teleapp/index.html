@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>My Telegram</title>
+        <link rel="stylesheet" href="style.css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script type="text/javascript">
+              var server = "http://kvantoriumchat.7m.pl/api/";
+function Login(username, password)
+{
+    var queryString = {'login' : username, 'password' : password};
+    $.ajax(
+        {
+            type: 'GET',
+            url: server+"user.login.php",
+            data: queryString,
+            success: function(data){
+                var obj = jQuery.parseJSON(data);
+                return obj[0].state;
+                setCookie("user_id", obj[0].user_id);
+                setCookie("password", password);
+            }
+        }
+    );
+}
+
+function getCookie(name) {
+  var matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+function setCookie(name, value, props) {
+
+props = props || {}
+
+var exp = props.expires
+
+if (typeof exp == "number" && exp) {
+
+    var d = new Date()
+
+    d.setTime(d.getTime() + exp*1000)
+
+    exp = props.expires = d
+
+}
+
+if(exp && exp.toUTCString) { props.expires = exp.toUTCString() }
+
+value = encodeURIComponent(value)
+
+var updatedCookie = name + "=" + value
+
+for(var propName in props){
+
+    updatedCookie += "; " + propName
+
+    var propValue = props[propName]
+
+    if(propValue !== true){ updatedCookie += "=" + propValue }
+}
+
+document.cookie = updatedCookie
+
+}
+
+function checkLoggedIn(){
+    if(typeof getCookie("user_id") == undefined){
+        alert("Не вошел!");
+        setCookie("user_id", 1);
+    }
+}
+
+// initialize jQuery
+$(function() {
+    checkLoggedIn();
+});
+        </script>
+
+    </head>
+    <body>
+        <center><h1>Kvantorium chat</h1></center>
+        <div class="dialogs">
+            <h2 class="chatsText">Dialogs</h2>
+            <div class="dialog"><img src="avatar.png" hspace="0" width="50" vspace="9" align="center" /><span class="matename">Name</span></div>
+        </div>
+        <div class="messages"><div id="response">Waiting</div><div class="notselected">Select a chat to start messaging</div></div>
+    </body>
+</html>

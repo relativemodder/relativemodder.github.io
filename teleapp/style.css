@@ -1,0 +1,73 @@
+body{
+    background-color: rgb(27, 27, 27);
+}
+h1{
+    font-family: Corbel;
+    color: whitesmoke;
+    z-index: 9;
+}
+h2.chatsText{
+    font-family: Helvetica;
+    color: whitesmoke;
+    z-index: 9;
+    width: 100%;
+    text-align: center;
+}
+.notselected{
+    width: 50%;
+    height: 30px;
+    left: 25%;
+    background-color: #414141;
+    color: aliceblue;
+    border-radius: 30px;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    font-family: Calibri;
+    font-weight: bold;
+    padding-top: 10px;
+}
+.matename{
+    font-size: 14pt;
+    padding-left: 20px;
+}
+div.dialog {
+    width: 100%;
+    height: 70px;
+    max-height: 70px;
+    position: relative;
+    background-color: rgb(50, 50, 50);
+    font-family: Helvetica;
+    color: whitesmoke;
+    padding-left: 20px;
+    border: blueviolet;
+    border-width: 2px;
+    margin-top: 4px;
+}
+@keyframes hovercolor {
+    from {background-color: rgb(50, 50, 50);}
+    to {background-color: #00a2ff;}
+    }
+div.dialog:hover{
+    animation-name: hovercolor;
+    animation-iteration-count: 1;
+    animation-duration: 200ms;
+    background-color: #00a2ff;
+}
+.dialogs{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 30%;
+    height: 100%;
+    background-color: rgb(40, 40, 40);
+}
+.messages{
+    position: fixed;
+    right: 0px;
+    left: 30%;
+    top: 0px;
+    width: 70%;
+    height: 100%;
+    background-color: #222222;
+}
