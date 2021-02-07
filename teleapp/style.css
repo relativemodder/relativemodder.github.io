@@ -10,6 +10,9 @@ input{
     border-radius: 14px;
     position: relative;
 }
+#errortext{
+    color: red;
+}
 form{
     font-size: 14pt;
     left: 0%;

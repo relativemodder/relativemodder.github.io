@@ -19,8 +19,20 @@ function Login(username, password)
             success: function(data){
                 var obj = jQuery.parseJSON(data);
                 return obj[0].state;
-                setCookie("user_id", obj[0].user_id);
-                setCookie("password", password);
+                if(obj[0].state == "ok"){
+                    setCookie("user_id", obj[0].user_id);
+                    setCookie("password", password);
+                }
+                else if(obj[0].state == "USER_DOESNT_EXIST"){
+                    $( "errortext" ).html("This user doesn't exist!");
+                }
+                else if(obj[0].state == "PASSWORD_INCORRECT"){
+                    $( "errortext" ).html("Password is incorrect!");
+                }
+                else{
+                    $( "errortext" ).html("What?");
+                }
+                
             }
         }
     );
@@ -113,7 +125,7 @@ $(function() {
                 <input type="password" name="password" placeholder="Password" /><br />
                 <input type="submit" id="sub" />
                 <br>
-                
+                <i id="errortext"></i>
             </form>
             
         </div>
