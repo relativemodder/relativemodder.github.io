@@ -14,7 +14,20 @@ function sendAjaxForm(ajax_form, url) {
         dataType: "html", 
         data: $("#"+ajax_form).serialize(),  
         success: function(response) { 
-        	result = $.parseJSON(response);
+        	obj = $.parseJSON(response);
+		if(obj[0].state == "ok"){
+                    setCookie("user_id", obj[0].user_id);
+                    setCookie("password", password);
+                }
+                else if(obj[0].state == "USER_DOESNT_EXIST"){
+                    $( "errortext" ).html("This user doesn't exist!");
+                }
+                else if(obj[0].state == "PASSWORD_INCORRECT"){
+                    $( "errortext" ).html("Password is incorrect!");
+                }
+                else{
+                    $( "errortext" ).html("What?");
+                }
         	console.log(result[0].state);
     	},
     	error: function(response) { 
