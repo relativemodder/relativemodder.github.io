@@ -28,7 +28,7 @@ function sendAjaxForm(ajax_form, url) {
                 else{
                     $( "errortext" ).html("What?");
                 }
-        	console.log(result[0].state);
+        	console.log(obj[0].state);
     	},
     	error: function(response) { 
             console.log("Error");
