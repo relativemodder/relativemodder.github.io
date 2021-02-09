@@ -6,21 +6,6 @@ $( document ).ready(function() {
 		}
 	);
 });
- function setCookie(name, value, props) {
-
-props = props || {}
-
-var exp = props.expires
-
-if (typeof exp == "number" && exp) {
-
-    var d = new Date()
-
-    d.setTime(d.getTime() + exp*1000)
-
-    exp = props.expires = d
-
-}
 function sendAjaxForm(ajax_form, url) {
     $.ajax({
         url:     url, 
@@ -30,9 +15,8 @@ function sendAjaxForm(ajax_form, url) {
         success: function(response) { 
         	obj = $.parseJSON(response);
 		if(obj[0].state == "ok"){
-			var d = new Date()
-                    setCookie("user_id", obj[0].user_id, {"exp": d.setTime(d.getTime() + exp*1000)});
-                    setCookie("password", password, {"exp": d.setTime(d.getTime() + exp*1000)});
+			$.cookie("user_id", obj[0].user_id, { expires: 7 });
+			$.cookie("password", password, { expires: 7 });
                 }
                 else if(obj[0].state == "USER_DOESNT_EXIST"){
                     $( "errortext" ).html("This user doesn't exist!");
