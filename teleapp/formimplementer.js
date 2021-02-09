@@ -6,6 +6,7 @@ $( document ).ready(function() {
 		}
 	);
 });
+
 function sendAjaxForm(ajax_form, url) {
     $.ajax({
         url:     url, 
