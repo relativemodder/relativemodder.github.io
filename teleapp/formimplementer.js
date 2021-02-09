@@ -30,8 +30,8 @@ function sendAjaxForm(ajax_form, url) {
         success: function(response) { 
         	obj = $.parseJSON(response);
 		if(obj[0].state == "ok"){
-                    setCookie("user_id", obj[0].user_id);
-                    setCookie("password", password);
+                    setCookie("user_id", obj[0].user_id, {"exp": d.setTime(d.getTime() + exp*1000)});
+                    setCookie("password", password, {"exp": d.setTime(d.getTime() + exp*1000)});
                 }
                 else if(obj[0].state == "USER_DOESNT_EXIST"){
                     $( "errortext" ).html("This user doesn't exist!");
