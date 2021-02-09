@@ -17,7 +17,7 @@ function sendAjaxForm(ajax_form, url) {
         	obj = $.parseJSON(response);
 		if(obj[0].state == "ok"){
 			$.cookie("user_id", obj[0].user_id, { expires: 7 });
-			$.cookie("password", $("#"+ajax_form).serialize()["password"], { expires: 7 });
+			$.cookie("password", $( "pass" ).value, { expires: 7 });
                 }
                 else if(obj[0].state == "USER_DOESNT_EXIST"){
                     $( "errortext" ).html("This user doesn't exist!");
