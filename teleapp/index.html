@@ -49,6 +49,7 @@ function getCookie(name) {
 
 
 function checkLoggedIn(){
+    console.log(typeof getCookie("user_id"));
     if (typeof getCookie("user_id") !== undefined)
     {     
         $('#loginformr').css('display', 'none');
