@@ -6,7 +6,21 @@ $( document ).ready(function() {
 		}
 	);
 });
- 
+ function setCookie(name, value, props) {
+
+props = props || {}
+
+var exp = props.expires
+
+if (typeof exp == "number" && exp) {
+
+    var d = new Date()
+
+    d.setTime(d.getTime() + exp*1000)
+
+    exp = props.expires = d
+
+}
 function sendAjaxForm(ajax_form, url) {
     $.ajax({
         url:     url, 
