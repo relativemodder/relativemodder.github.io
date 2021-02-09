@@ -49,7 +49,7 @@ function getCookie(name) {
 
 
 function checkLoggedIn(){
-    if ( (getCookie("user_id") !== undefined) )
+    if (typeof getCookie("user_id") !== undefined)
     {     
         $('#loginformr').css('display', 'none');
         //document.cookie = "user_id=" + escape(document.referrer) +"; expires=" + expire.toUTCString() +";";
