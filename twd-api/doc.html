@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Twaddle API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="https://twd-api-docs.7m.pl/static/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="https://twd-api-docs.7m.pl/static/css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://twd-api-docs.7m.pl/static/ico/favicon.png">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Twaddle API</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="/">Docs</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+    <h1>Twaddle API</h1>
+    Endpoint: http://176.113.82.87/api/
+    Events WebSocket Endpoint: ws://176.113.82.87:8765
+    <h2>Events</h2>
+    <pre class="prettyprint lang-js">
+// Front-end JS (browser)
+ws = new WebSocket("ws://176.113.82.87:8765")
+ws.onmessage = function(data){
+    console.log(data) # On new message it will display in console
+}
+payload = {
+    'token': 'RanD0MSymbolS'
+}
+ws.send(JSON.stringify(payload)) // Sending command to authorize and start listening
+
+</pre>
+    <h2>Accounts</h2>
+    <strong>/api/accounts.login</strong>
+      <pre class="prettyprint lang-js">
+// POST JSON REQUEST
+{
+    'username': 'spaceuk',
+    'password': 'ibeatslaughterhouse'
+}
+// JSON RESPONSE
+{
+    'token': 'RanD0MSymbolS' // Your secret access token, save it please
+}</pre>
+      
+    <strong>/api/accounts.register</strong>
+      <pre class="prettyprint lang-js">
+// POST JSON REQUEST
+{
+    'username': 'spaceuk',
+    'password': 'ibeatslaughterhouse'
+}
+// JSON RESPONSE
+{
+    'token': 'RanD0MSymbolS' // Your secret access token, save it please
+}</pre>
+      
+      <strong>/api/accounts.get</strong>
+      <pre class="prettyprint lang-js">
+// POST JSON REQUEST
+{
+    'uid': 1 #user ID
+}
+// JSON RESPONSE
+{
+    'uid': 1,
+    'userName': 'test',
+    'avatar': null // NO AVATAR LMAO
+}</pre>
+    <h2>Messages</h2>
+    <strong>/api/messages.send</strong>
+      <pre class="prettyprint lang-js">
+// POST JSON REQUEST
+{
+    'token': 'RanD0MSymbolS', // Your secret access token
+    'encrypt_key': 'randkeylmao12345', // Encryption key
+    'encrypted_text': 'r7dgywui==', // encrypted text = text->cyclic xor with randkeylmao12345 key->to base 64
+    'attachments': [
+            {
+                'type': 'document', // or you can make your own attachments
+                'url': 'http://example.com'
+            }
+        ],
+    'dialog_id': 333 // Dialog ID
+}
+// JSON RESPONSE
+{
+    'token': 'RanD0MSymbolS' // Your secret access token, save it please
+}</pre>
+    <strong>/api/messages.createDialog</strong>
+      <pre class="prettyprint lang-js">
+// POST JSON REQUEST
+{
+    'token': 'RanD0MSymbolS', // Your secret access token
+    'members': [1, 2, 60], // User ID's
+    'name': 'GOOD CHAT' // Chat name
+}
+// JSON RESPONSE
+{
+    'status': 'dialog_created' // WOOOOO
+}</pre>
+
+    <strong>/api/messages.getDialogs</strong>
+      <pre class="prettyprint lang-js">
+// POST JSON REQUEST
+{
+    'token': 'RanD0MSymbolS' // Your secret access token
+}
+// JSON RESPONSE
+{
+    'dialogs': [
+        {
+            'dialog_id': 1,
+            'dialog_name': 'Cool Cursed Gang',
+            'dialog_members': [1, 77, 9344523, 532523]
+        }
+    ]
+}</pre>
+    <strong>/api/messages.getMessages</strong>
+      <pre class="prettyprint lang-js">
+// POST JSON REQUEST
+{
+    'token': 'RanD0MSymbolS', // Your secret access token
+    'dialog_id': 3,
+    'limit': 1 // Max=500, Default=50
+}
+// JSON RESPONSE
+{
+    'messages': [
+        {
+            'encrypted_text': 'r7dgywui==',
+            'encrypt_key': 'randkeylmao12345',
+            'attachments': [
+                {
+                    'type': 'document', // or you can make your own attachments
+                    'url': 'http://example.com'
+                }
+            ],
+            'author': {
+                'uid': 1,
+                'userName': 'test',
+                'avatar': null // NO AVATAR LMAO
+            },
+            'timestamp': 1234567,
+            'message_id': 44421
+        }
+    ]
+}</pre>
+    </div> <!-- /container -->
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  </body>
+</html>
