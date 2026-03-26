@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.jpg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link rel="modulepreload" href="/_app/immutable/entry/start.LVVOpaYw.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/entry.CYdoUauW.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/scheduler.BSdPyJLC.js">
+		<link rel="modulepreload" href="/_app/immutable/entry/app.BXU0mVT6.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/index.DoOdspgQ.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div id="particles-js" class="fixed left-0 top-0 w-full h-screen pointer-events-none"></div>
+		
+		<div style="display: contents">
+			<script>
+				{
+					__sveltekit_k2jhh5 = {
+						base: ""
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("/_app/immutable/entry/start.LVVOpaYw.js"),
+						import("/_app/immutable/entry/app.BXU0mVT6.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element);
+					});
+				}
+			</script>
+		</div>
+
+		<script src="/legacy/particles.min.js"></script>
+		<script>
+			window.addEventListener("load", () => {
+				particlesJS.load('particles-js', '/legacy/particles.json', function() {
+					console.log('callback - particles-js config loaded');
+				});
+			})
+		</script>
+	</body>
+</html>
