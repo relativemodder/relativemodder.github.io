@@ -26,7 +26,7 @@
     </InfoParagraph>
 
     <InfoParagraph icon="ri:nodejs-line">
-        JavaScript
+        JavaScript / TypeScript
     </InfoParagraph>
 
     <InfoParagraph icon="ri:svelte-fill">
@@ -46,6 +46,5 @@
             target="_blank">
                 React
         </a>
-        <span class="opacity-50">(a little bit)</span>
     </InfoParagraph>
 </InfoCategory>
