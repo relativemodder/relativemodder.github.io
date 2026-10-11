@@ -13,19 +13,20 @@
 	</InfoParagraph>
 
 	<InfoParagraph icon="material-symbols:work">
-		Full-stack, mostly front-end web developer
+		Full-stack software engineer
 	</InfoParagraph>
 
+<!--
 	<InfoParagraph icon="fluent:hat-graduation-12-filled">Junior</InfoParagraph>
-
-	<InfoParagraph icon="mdi:arch">
-		<a class="underline underline-offset-2" href="https://archlinux.org" target="_blank">
-			Arch Linux
+-->
+	<InfoParagraph icon="devicon-plain:fedora">
+		<a class="underline underline-offset-2" href="https://bazzite.gg" target="_blank">
+			Bazzite
 		</a>
 		is my main OS
 	</InfoParagraph>
 
-	<InfoParagraph icon="lucide:languages">Russian (Native), English (B2-C1, idk)</InfoParagraph>
+	<InfoParagraph icon="lucide:languages">Russian (Native), English (B2-C1)</InfoParagraph>
 
 	<InfoParagraph icon="mdi:github">
 		<a
