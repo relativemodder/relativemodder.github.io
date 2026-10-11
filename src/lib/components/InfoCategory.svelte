@@ -6,7 +6,7 @@
     export let coverIcon: string;
 </script>
 
-<div class="mt-10 m-5 p-5 bg-zinc-900 rounded-xl relative">
+<div class="mt-10 m-5 p-5 bg-zinc-900 rounded-xl relative max-w-96">
     <div>
         <h2 class="mx-3 text-2xl flex gap-5 w-full items-center font-semibold">
             <Icon icon="octicon:chevron-right-12" font-size="14pt" />
